@@ -83,7 +83,7 @@ class GithubPopularRepos extends Component {
     return (
       <ul className="repositories-list">
         {respositoriesData.map(each => (
-          <RepositoryItem key={each.id} repositoryDetailes={each} />
+          <RepositoryItem key={each.id} repositoryDetails={each} />
         ))}
       </ul>
     )
@@ -97,7 +97,7 @@ class GithubPopularRepos extends Component {
         return this.renderRepositoriesListView()
       case apiStatusConstants.failure:
         return this.renderFailureView()
-      case apiStatusConstants.inProcess():
+      case apiStatusConstants.inProcess:
         return this.renderLodingView()
       default:
         return null
@@ -117,7 +117,7 @@ class GithubPopularRepos extends Component {
           <LanguageFilterItem
             key={each.id}
             isActive={each.id === activeLanguageFilterId}
-            languageFiltersDetails={each}
+            languageFilterDetails={each}
             setActiveLanguageFilterId={this.setActiveLanguageFilterId}
           />
         ))}
